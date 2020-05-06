@@ -265,7 +265,7 @@ function setEnemies(Board){
 function Draw(x) {
 	canvas.width = canvas.width; //clean board
 	lblScore.value = score;
-    lblTime.value = UserTime;
+    lblTime.value = Math.floor(UserTime);
 	for (var i = 0; i < 20; i++) {
 		for (var j = 0; j < 20; j++) {
 			var center = new Object();
