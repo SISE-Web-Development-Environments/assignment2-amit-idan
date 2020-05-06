@@ -1,0 +1,496 @@
+/* Make the page use the entire screen */
+
+html{
+  height: 100%;
+}
+
+body {
+  height: 40%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-image: url("https://wallpaperaccess.com/full/251322.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* -------------------- header + footer ---------------------- */
+
+#headerush {
+    height: 20%;
+}
+
+#footerush {
+    display: grid;
+    width:100%;
+    position: fixed;
+    left: 0;
+    margin-top: 15px;
+    bottom: 0;
+    justify-items: center;
+    align-items: center;
+    height: 10%;
+    background-color: white;
+      border-radius: 7px;
+      box-shadow: 0px 0px 5px 2px black;
+}
+
+/*------------------menus------------------- */
+
+#welcome-menu {
+  width: 60%;
+  height: 110%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 2px black;
+}
+
+#Logged-menu {
+	width: 60%;
+  height: 110%;
+  justify-items: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 2px black;
+  display: none;
+}
+
+/* -------------------------------------------------------------- */
+
+/* Error msgs holders */
+
+#login-error-msg-holder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+#Register-error-msg-holder{
+	width: 100%;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+#Settings-error-msg-holder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+#Keys-error-msg-holder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.error {
+    color: #ffffff;
+}
+
+/* Error message in login and register forms */
+
+#login-error-msg {
+  width: 23%;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #8a0000;
+  border: 1px solid #8a0000;
+  background-color: #e58f8f;
+  opacity: 0;
+}
+
+#Register-error-msg {
+  width: 23%;
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #8a0000;
+  border: 1px solid #8a0000;
+  background-color: #e58f8f;
+  opacity: 0;
+}
+
+#Settings-error-msg {
+    width: 23%;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8a0000;
+    border: 1px solid #8a0000;
+    background-color: #e58f8f;
+    opacity: 0;
+}
+
+#Keys-error-msg {
+    width: 23%;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8a0000;
+    border: 1px solid #8a0000;
+    background-color: #e58f8f;
+    opacity: 0;
+}
+
+#error-msg-second-line {
+    display: block;
+}
+
+/* -------------------------------------------------------------- */
+
+/* forms -> registration, login, settings */
+
+#login-form {
+  padding: 20%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align:center;
+}
+
+#register-form {
+  padding: 20%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  text-align:center;
+}
+
+#settings-form {
+    padding: 20%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* -------------------- content ---------------------- */
+
+#about-modal-content{
+background-color: #f4f4f4;
+margin: 20%;
+  padding: 20px;
+width:70%
+}
+
+
+/* Style the login form fields' placeholders */
+
+.login-form-field::placeholder {
+  color: #3a3a3a;
+}
+
+/* Style the form fields -> registration, login, settings */
+
+.login-form-field {
+  border: none;
+  border-bottom: 1px solid #3a3a3a;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  outline: none;
+  padding: 0px 0px 5px 5px;
+}
+
+.register-form-field{
+	border: none;
+  border-bottom: 1px solid #3a3a3a;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  outline: none;
+  padding: 0px 0px 5px 5px;
+}
+
+.settings-form-field {
+    border: none;
+    border-bottom: 1px solid #3a3a3a;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    outline: none;
+    padding: 0px 0px 5px 5px;
+}
+
+/* -------------------- content ---------------------- */
+
+.modal{
+  position: center;
+  z-index: 10;
+  left: fixed;
+  top: fixed;
+  width: 100%;
+  height: 100vh;
+  text-align:center;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.95);
+}
+
+.modal-content{
+  background-color: #f4f4f4;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 5px 8px 0   rgba(0,0,0,0.2);
+}
+
+.about{
+  position: center;
+  z-index: 10;
+  left: fixed;
+  top: fixed;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  text-align:center;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.95);
+
+}
+
+/* -------------------- headers ---------------------- */
+
+#RegisterHeader{
+	background-color: #f4f4f4;
+	border-radius: 7px;
+	padding: 2px;
+	width:120px;
+}
+
+#LoginHeader{
+	background-color: #f4f4f4;
+	border-radius: 7px;
+	padding: 2px;
+	width:120px;
+}
+
+#SettingsHeader {
+    background-color: #f4f4f4;
+    border-radius: 7px;
+    padding: 2px;
+    width: 120px;
+}
+
+#lablush {
+    display: inline-block;
+    width: 300px;
+    color: white;
+}
+
+
+/* -------------------- modals ---------------------- */
+
+#login-modal{
+  display: none;
+  align-items: center;
+  position: fixed;
+  padding-top: 10px;
+  padding-left: 30;
+  padding-right: 20px;
+  align-items: center;
+  text-align:center;
+}
+
+#about-modal{
+  display: none;
+  position: fixed;
+  padding-top: 10px;
+  padding-left: 30;
+  padding-right: 20px;
+  text-align:center;
+}
+
+#register-modal{
+    display: none;
+    align-items: center;
+    position: fixed;
+    padding-top: 10px;
+    padding-right: 20px;
+    align-items: center;
+    text-align:center;
+}
+
+#Settings-modal {
+    display: none;
+    position: fixed;
+    padding-top: 10px;
+    padding-right: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+#GameScreen {
+	width: 60%;
+  height: 80%;
+  position: relative;
+  bottom: 50px;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 2px black;
+  display: none;
+}
+
+/* Style the buttons */
+
+#login-form-submit {
+  width: 15%;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: #3a3a3a;
+  cursor: pointer;
+  outline: none;
+}
+
+#Register-form-submit{
+  width: 15%;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: #3a3a3a;
+  cursor: pointer;
+  outline: none;
+}
+
+#Cancel-Back {
+  width: 15%;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: #3a3a3a;
+  cursor: pointer;
+  outline: none;
+}
+
+#OpenLoginBtn{
+  width:15%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: #3a3a3a;
+  cursor: pointer;
+  outline: none;
+}
+
+#PlayBtn {
+	width:15%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: #3a3a3a;
+  cursor: pointer;
+  outline: none;
+}
+
+#LogoutBtn {
+	width:15%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: #3a3a3a;
+  cursor: pointer;
+  outline: none;
+}
+
+#AboutBtn{
+  width:60px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: #3a3a3a;
+  cursor: pointer;
+  outline: none;
+}
+
+#backBtn {
+  width: 15%;
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: #3a3a3a;
+  cursor: pointer;
+  outline: none;
+  
+}
+
+#OpenRegisterBtn{
+  width:15%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  background-color: #3a3a3a;
+  cursor: pointer;
+  outline: none;
+}
+
+#xBtn{
+	  cursor: pointer;
+	  float: right;
+}
+
+#Start-submit {
+    width: 15%;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+}
+
+#Random-Settings-submit {
+    width: 15%;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    outline: none;
+}
+
+.colorBtn {
+    width: 7%;
+    margin-bottom: 10px;
+    border-radius: 90%;
+    cursor: pointer;
+    outline: none;
+}
+
+
+
+/* Style the game screen */
