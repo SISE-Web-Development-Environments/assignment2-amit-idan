@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<header id="headerush">
+    <center>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Panda Pacman</title>
+
+        <h9> amit wolf 307854364 & idan albilia 311375612</h9>
+
+        <link rel="stylesheet" href="style.css">
+
+    </center>
+</header>
+
+<body>
+
+    <!------------------------------ menu divs -------------------------->
+
+    <div id="welcome-menu">
+        <h1 id="login-header">Panda Pacman</h1>
+        <input type="submit" value="Login" id="OpenLoginBtn">
+        <input type="submit" value="Register" id="OpenRegisterBtn">
+    </div>
+
+    <div id="Logged-menu">
+        <h1 id="Logged-header">Panda Pacman</h1>
+        <input type="submit" value="Play" id="PlayBtn">
+        <input type="submit" value="Logout" id="LogoutBtn">
+    </div>
+
+    <div id="Playing-menu">
+        <h1 id="Playing-header">Panda Pacman</h1>
+        <input type="submit" value="Start New Game" id="NewGameBtn">
+        <input type="submit" value="Restart Game" id="RestartBtn">
+        <input type="submit" value="Logout" id="Logout2Btn">
+    </div>
+
+
+    <div id="GameScreen" >
+        <label id="playerName" class="PlayerField"></label>
+        <div id="game">
+            <canvas id="canvas" height="700" width="700"></canvas>
+            <div id="settingsShow">
+                <div id="score">
+                    <label for="lblScore" class="GameStats">Score:</label>
+                    <br />
+                    <input id="lblScore" type="text" class="GameStats" />
+                </div>
+                <div id="time">
+                    <label for="lblTime" class="GameStats">Time:</label>
+                    <br />
+                    <input id="lblTime" type="text"  class="GameStats"/>
+                </div>
+                <div>
+                    <label for="lblTime" class="GameStats">Lives:</label>
+                    <br />
+                    <img src="panda1.png" height="42" width="42" id="1" >
+                    <img src="panda1.png" height="42" width="42" id="2">
+                    <img src="panda1.png" height="42" width="42" id="3">
+                    <img src="panda1.png" height="42" width="42" id="4">
+                    <img src="panda1.png" height="42" width="42" id="5">
+                </div>
+
+                <h3 id="headerInGameSettings" class="GameStatusField"> Game Settings</h3>
+
+
+                <label id="keyUpSettings" class="GameStatusField"></label>
+                <br />
+                <label id="keyDownSettings" class="GameStatusField"></label>
+                <br />
+                <label id="keyRightSettings" class="GameStatusField"></label>
+                <br />
+                <label id="keyLeftSettings" class="GameStatusField"></label>
+                <br />
+                <label id="NumOfMonsters" class="GameStatusField"></label>
+                <br />
+                <label id="howMuchTime" class="GameStatusField"></label>
+                <br />
+                <label id="numOfBalls" class="GameStatusField"></label>
+
+                <h3 id="headerInGameBalls" class="GameStatusField"> Balls and Score</h3>
+                <div id="circle5"></div>
+                <div id="circle15"></div>
+                <div id="circle25"></div>
+
+            </div>
+        </div>
+      
+    </div>
+    <!------------------------------------------------- modals ---------------------------------------------------->
+    <!------------------------- about modal -------------------------->
+
+    <div class="about" id="about-modal">
+        <div id="about-modal-content">
+            <span style="color:black" class="close" id="xBtn">&times;</span>
+            <p style="color:black"> Created by Idan Albilia and Amit Wolf</p>
+            <p style="color:black"> JQuery Plugins: jquery Version 3.4.1</p>
+            <p style="color:black"> Difficulties:</p>
+            <p style="color:black"> Coding the right placement of UI buttons and menus were a challenge</p>
+            <input onclick="hideAll()" type="submit" value="Back" id="Cancel-Back" class="button">
+        </div>
+    </div>
+
+    <!------------------------------ registrtion modal -------------------------->
+
+    <div id="register-modal" class="modal">
+        <form id="register-form">
+            <h9 id="RegisterHeader" class="register-form-field"> Register form </h9>
+            <input type="text" name="username" id="username2-field" class="register-form-field" placeholder="Username">
+            <input type="password" name="password" id="password2-field" class="register-form-field" placeholder="Password">
+            <input type="text" name="firstname" id="First-name-field" class="register-form-field" placeholder="First Name">
+            <input type="text" name="lastname" id="Last-name-field" class="register-form-field" placeholder="Last Name">
+            <input type="text" name="email" id="email-field" class="register-form-field" placeholder="Email">
+            <input type="date" id="birthday" name="Birth" min="1960-01-01" max="2018-12-31" class="register-form-field">
+            <input type="submit" value="Register" id="Register-form-submit" class="register-form-field">
+            <input type="submit" value="Cancel" id="Cancel-Back" class="register-form-field">
+            <div id="Register-error-msg-holder">
+                <p id="Register-error-msg">
+                    Invalid Info
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <!------------------------------ login modal -------------------------->
+
+    <div id="login-modal" class="modal">
+        <form id="login-form">
+            <h9 id="LoginHeader" class="register-form-field"> Login form </h9>
+            <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+            <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+            <input type="submit" value="Login" id="login-form-submit" class="login-form-field">
+            <input type="submit" value="Cancel" id="Cancel-Back" class="login-form-field">
+            <div id="login-error-msg-holder">
+                <p id="login-error-msg">
+                    Invalid username
+                    <span id="error-msg-second-line">and/or password</span>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <!------------------------------ settings modal -------------------------->
+
+    <div id="Settings-modal" class="modal">
+        <form id="settings-form">
+            <h9 id="SettingsHeader" class="settings-form-field"> Settings </h9>
+            <input type="text" name="upKey" id="up-key" class="settings-form-field" placeholder="up-key" maxlength="1">
+            <input type="text" name="downKey" id="down-key" class="settings-form-field" placeholder="down-key" maxlength="1">
+            <input type="text" name="rightKey" id="right-key" class="settings-form-field" placeholder="right-key" maxlength="1">
+            <input type="text" name="leftKey" id="left-key" class="settings-form-field" placeholder="left-key" maxlength="1">
+            <input type="number" name="clock" id="clock" class="settings-form-field" placeholder="time">
+            <input type="number" name="monsters" id="monsters" class="settings-form-field" placeholder="how many monsters?">
+            <input type="number" name="food" id="food" class="settings-form-field" placeholder="how much food?">
+            <label id="lablush"> 5 points ball <input type="color" name="five" id="five" class="colorBtn"></label>
+            <label id="lablush"> 15 points ball <input type="color" name="fifteen" id="fifteen" class="colorBtn"></label>
+            <label id="lablush"> 25 points ball <input type="color" name="twentyfive" id="twentyfive" class="colorBtn"></label>
+            <input type="submit" value="Random" id="Random-Settings-submit" class="settings-form-field">
+            <input type="submit" value="Start" id="Start-submit" class="settings-form-field">
+            <input type="submit" value="Cancel" id="SettingsCancel" class="settings-form-field">
+            <div id="Settings-error-msg-holder">
+                <p id="Settings-error-msg">
+                    Invalid Settings
+                </p>
+            </div>
+            <div id="Keys-error-msg-holder">
+                <p id="Keys-error-msg">
+                    Keys can't overlap panda
+                </p>
+            </div>
+        </form>
+    </div>
+
+
+    <!------------------------------ game screen div -------------------------->
+
+
+
+</body>
+
+<footer id="footerush">
+    <center>
+        <h9> Panda Pacman - Version 1.0</h9>
+    </center>
+    <br />
+    <input type="submit" value="About" id="AboutBtn" class="login-form-field">
+</footer>
+
+<audio id="Music">
+    <source src="PandaMusic.mp3" type="audio/mpeg">
+</audio>
+
+
+<audio id="Kiss">
+    <source src="Kiss.mp3" type="audio/mpeg">
+</audio>
+
+<!------------------------------ scripts  -------------------------->
+<script src="./jquery-3.4.1.slim.min.js"></script>
+<script src="ass2.js"></script>
+<script type="text/javascript" src="./app.js"></script>
+
+
+</html>
